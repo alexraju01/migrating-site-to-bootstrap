@@ -2,6 +2,8 @@
 	margin: 0 0 2.2rem 0;
 	color: var(--color-soft);
 	font-size: 1.6rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
 }
 
 .platform-grid {
@@ -38,6 +40,7 @@
 	margin: 0 0 0.3rem 0;
 	font-size: 1.6rem;
 }
+
 .platform-card p {
 	color: var(--color-soft);
 	font-size: 1.3rem;
@@ -49,6 +52,7 @@
 	box-shadow: 0 18px 36px rgba(0, 0, 0, 0.7);
 }
 
+/* Platform-Specific Colors */
 .platform-card[data-platform="playstation"] i,
 .platform-card .ps5 {
 	color: #6aa0ff;
@@ -75,9 +79,9 @@
 }
 
 .cta-row {
-	display: flex;
 	gap: 1rem;
-	align-items: center;
+	margin-top: 2.4rem;
+	margin-bottom: 2.4rem;
 }
 
 .btn-primary {
@@ -89,6 +93,7 @@
 	text-decoration: none;
 	font-weight: 700;
 	box-shadow: 0 8px 26px rgba(255, 0, 85, 0.12);
+	transition: all 0.3s ease;
 }
 
 .btn-ghost {
@@ -100,32 +105,9 @@
 	text-decoration: none;
 	font-weight: 600;
 	background: transparent;
+	transition: all 0.3s ease;
 }
 
-/* Responsive tweaks */
-@media (max-width: 640px) {
-	.platforms-header h2 {
-		font-size: 2.4rem;
-	}
-	.platform-card {
-		padding: 1.1rem;
-		border-radius: 10px;
-	}
-	.platform-card i {
-		font-size: 2.4rem;
-		min-width: 44px;
-	}
-	.cta-row {
-		flex-direction: column;
-		align-items: stretch;
-	}
-	.btn-primary,
-	.btn-ghost {
-		width: 100%;
-		text-align: center;
-	}
-}
-/* #### System Requirements Section #### */
 .system-requirements-section {
 	padding: 6rem 2rem;
 	background-color: var(--color-bg);
@@ -147,18 +129,17 @@
 	color: var(--color-soft);
 }
 
-/* Grid Layout */
 .requirements-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 	gap: 2rem;
 }
 
-/* Individual Cards */
 .requirement-card {
 	background: var(--glass);
 	backdrop-filter: blur(10px);
 	padding: 2rem;
+	/* Custom accent border retained */
 	border: 0.1rem solid var(--color-accent);
 	border-radius: 1.5rem;
 	transition: transform 0.3s, box-shadow 0.3s;
@@ -181,23 +162,50 @@
 	margin-bottom: 0.5rem;
 }
 
-/* CTA Button */
-.cta-row {
-	text-align: center;
+.system-requirements-section .cta-row {
 	margin-top: 4rem;
+	text-align: center;
 }
 
-.btn-primary {
-	display: inline-block;
+.system-requirements-section .btn-primary {
 	padding: 1rem 2.5rem;
 	font-size: 1.6rem;
 	color: var(--color-bg);
 	background-color: var(--color-accent);
 	border-radius: 1rem;
-	transition: background 0.3s, transform 0.3s;
 }
 
-.btn-primary:hover {
+.system-requirements-section .btn-primary:hover {
 	background-color: #ff3388;
 	transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+	.platforms-header h2 {
+		font-size: 2.4rem;
+	}
+	.platform-card {
+		padding: 1.1rem;
+		border-radius: 10px;
+	}
+	.platform-card i {
+		font-size: 2.4rem;
+		min-width: 44px;
+	}
+
+	/* Overrides Bootstrap d-flex on mobile to stack columns */
+	.platforms-section .cta-row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.platforms-section .btn-primary,
+	.platforms-section .btn-ghost {
+		width: 100%;
+		text-align: center;
+	}
+
+	.platforms-section .btn-primary {
+		margin-bottom: 1rem;
+	}
 }

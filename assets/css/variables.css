@@ -79,23 +79,6 @@ a {
 	border-radius: 6px;
 }
 
-/* Footer */
-footer {
-	padding: 2rem 1rem;
-	background: transparent;
-	border-top: 1px solid rgba(255, 255, 255, 0.03);
-	color: var(--color-soft);
-}
-.social-icons a {
-	margin-right: 0.5rem;
-	color: var(--color-text);
-}
-.copyright {
-	margin-top: 1rem;
-	font-size: 0.9rem;
-	color: var(--color-soft);
-}
-
 /* Responsive tweaks */
 @media (min-width: 992px) {
 	#hero h1 {
