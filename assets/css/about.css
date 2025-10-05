@@ -1,178 +1,143 @@
-/* ===== ABOUT US PAGE STYLES ===== */
-/* main {
-	font-family: var(--font-family-base);
-	color: var(--color-text);
-	background-color: var(--color-bg);
-	padding: 4rem 2rem;
-} */
+/*
+|=================================================================================|
+| BOOTSTRAP ADAPTATION OF CUSTOM STYLES                                           |
+| This CSS file should be linked AFTER the main Bootstrap CSS file.               |
+| It uses Bootstrap utility classes in the HTML for layout and spacing,           |
+| but overrides appearance properties (colors, backgrounds, fonts, effects) here. |
+|=================================================================================|
+*/
 
-/* ----- HERO SECTION ----- */
+/* 1. CUSTOM CSS VARIABLES & BOOTSTRAP OVERRIDES */
+:root {
+	/* Custom Theme Colors */
+	--nl-color-bg: #0a0a0a;
+	--nl-color-text: #ffffff;
+	--nl-color-accent: #ff0055;
+	--nl-color-soft: #aaa;
+	--nl-glass: rgba(255, 255, 255, 0.03);
+	--nl-item-edge: rgba(255, 255, 255, 0.04);
+
+	/* Bootstrap Color Overrides for Theming */
+
+	--bs-primary: var(--nl-color-accent);
+	--bs-light: var(--nl-glass);
+	--bs-dark: var(--nl-color-bg); /* Using bg for 'dark' background in the team section */
+	--bs-body-color: var(--nl-color-text);
+	--bs-body-bg: var(--nl-color-bg);
+	--bs-secondary: var(--nl-color-soft); /* Using soft color for secondary text/backgrounds */
+
+	--bs-body-font-family: "Orbitron", sans-serif;
+}
+
+/* Apply base background and text color to the body */
+body {
+	background-color: var(--nl-color-bg);
+	color: var(--nl-color-text);
+	font-family: var(--bs-body-font-family);
+}
+
 .about-hero {
-	text-align: center;
-	padding: 4rem 2rem;
-	background: var(--glass);
+	background: var(--nl-glass);
 	border-radius: 1rem;
-	margin-bottom: 4rem;
+	border: 1px solid var(--nl-item-edge);
+}
+.about-hero > .container {
+	padding: 2rem;
 }
 
 .about-hero h1 {
-	font-size: 4rem;
-	color: var(--color-accent);
-	margin-bottom: 1rem;
+	font-size: clamp(2.5rem, 6vw, 4rem);
+	color: var(--nl-color-accent) !important;
 }
 
 .about-hero p {
-	font-size: 1.8rem;
-	color: var(--color-soft);
+	font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+	color: var(--nl-color-soft) !important;
 	max-width: 800px;
-	margin: 0 auto 2rem auto;
 }
 
-.about-hero img {
-	width: 100%;
-	max-width: 800px;
-	border-radius: 1rem;
-	margin-top: 2rem;
-}
-
-/* ----- MISSION SECTION ----- */
-.about-mission {
-	text-align: center;
-	margin-bottom: 4rem;
-}
-
+/* 3. MISSION SECTION STYLES */
 .about-mission h2 {
-	font-size: 3rem;
-	color: var(--color-accent);
-	margin-bottom: 1.5rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+	color: var(--nl-color-accent) !important;
 }
 
 .about-mission p {
-	font-size: 1.6rem;
-	color: var(--color-soft);
-	max-width: 900px;
-	margin: 0 auto;
+	font-size: clamp(1rem, 2vw, 1.6rem);
+	color: var(--nl-color-soft) !important;
 }
 
-/* ----- VALUES SECTION ----- */
-.about-values {
-	margin-bottom: 4rem;
-}
-
+/* 4. VALUES SECTION STYLES */
 .about-values h2 {
-	font-size: 3rem;
-	color: var(--color-accent);
-	text-align: center;
-	margin-bottom: 3rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+	color: var(--nl-color-accent) !important;
 }
 
-.values-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: 2rem;
-	text-align: center;
-}
-
-.value-item {
-	background: var(--glass);
-	border: 1px solid var(--color-border);
-	border-radius: 1rem;
-	padding: 2rem 1rem;
+.about-values .card {
+	background: var(--nl-glass) !important;
+	border: 1px solid var(--nl-item-edge) !important;
+	padding: 2rem 1rem !important; /* Custom padding from original */
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.value-item i {
-	font-size: 3rem;
-	color: var(--color-accent);
-	margin-bottom: 1rem;
+.about-values .card i {
+	font-size: 3rem !important;
+	color: var(--nl-color-accent) !important;
 }
 
-.value-item h3 {
-	font-size: 2rem;
-	margin-bottom: 1rem;
+.about-values .card-title {
+	font-size: clamp(1.4rem, 2.5vw, 2rem);
 }
 
-.value-item p {
-	font-size: 1.5rem;
-	color: var(--color-soft);
+.about-values .card-text {
+	font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+	color: var(--nl-color-soft) !important;
 }
 
-.value-item:hover {
+.about-values .card:hover {
 	transform: translateY(-10px);
-	box-shadow: 0 0 2rem var(--color-accent);
+	box-shadow: 0 0 2rem var(--nl-color-accent) !important; /* !important to override BS shadow */
 }
 
-/* ----- TEAM SECTION ----- */
-.about-team {
-	text-align: center;
-	margin-bottom: 4rem;
-}
-
+/* 5. TEAM SECTION STYLES */
 .about-team h2 {
-	font-size: 3rem;
-	color: var(--color-accent);
-	margin-bottom: 1rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+	color: var(--nl-color-accent) !important;
 }
 
 .about-team p {
-	font-size: 1.6rem;
-	color: var(--color-soft);
-	max-width: 900px;
-	margin: 0 auto 3rem auto;
+	font-size: clamp(1rem, 2vw, 1.6rem);
+	color: var(--nl-color-soft) !important;
 }
 
-.team-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 2rem;
-	justify-items: center;
-}
-
-.team-member {
-	background: var(--glass);
-	border: 1px solid var(--color-border);
-	border-radius: 1rem;
-	padding: 2rem 1rem;
+.about-team .card {
+	background: var(--nl-glass) !important;
+	border: 1px solid var(--nl-item-edge) !important;
+	padding: 2rem 1rem !important;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-member img {
-	width: 150px;
-	height: 150px;
-	object-fit: cover;
-	object-position: center top;
-	border-radius: 50%;
-	margin-bottom: 1rem;
+.about-team .card-img-top {
+	width: 150px !important;
+	height: 150px !important;
+	object-fit: cover !important;
+	object-position: center top !important;
+	border-radius: 50% !important;
+	margin: 0 auto 1rem auto;
+	display: block;
 }
 
-.team-member h4 {
-	font-size: 1.8rem;
-	color: var(--color-accent);
-	margin-bottom: 0.5rem;
+.about-team .card-title {
+	font-size: clamp(1.2rem, 2vw, 1.8rem);
+	color: var(--nl-color-accent) !important;
 }
 
-.team-member p {
-	font-size: 1.5rem;
-	color: var(--color-soft);
+.about-team .card-text {
+	font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+	color: var(--nl-color-soft) !important;
 }
 
-.team-member:hover {
+.about-team .card:hover {
 	transform: translateY(-10px);
-	box-shadow: 0 0 2rem var(--color-accent);
-}
-
-/* ----- RESPONSIVE ----- */
-@media (max-width: 768px) {
-	.about-hero h1 {
-		font-size: 3rem;
-	}
-	.about-mission h2,
-	.about-values h2,
-	.about-team h2 {
-		font-size: 2.5rem;
-	}
-	.value-item h3,
-	.team-member h4 {
-		font-size: 1.6rem;
-	}
+	box-shadow: 0 0 2rem var(--nl-color-accent) !important;
 }
