@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Next Level</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet" />
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+			integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="./assets/css/app.css" />
+	</head>
+	<body>
+		<!-- NAVBAR -->
+
+		<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+			<div class="container">
+				<a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+					<i class="fa-solid fa-gamepad fa-2x"></i>
+					<span class="fw-bold">NextLevel</span>
+				</a>
+
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#mainNav"
+					aria-controls="mainNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+						<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="./platforms.html">Platform</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						<li class="nav-item ms-3 d-flex align-items-center">
+							<!-- Theme toggle (visual only) -->
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- HERO -->
+
+		<header id="hero" class="text-center text-md-start">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-7 hero-content">
+						<h1>Level Up Your Gaming Experience</h1>
+						<p class="lead">Discover the latest games, news, and community events.</p>
+						<a
+							href="#games"
+							class="btn btn-lg"
+							style="background: var(--color-accent); color: #fff; font-weight: 700"
+							>Explore Games</a
+						>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- MAIN -->
+
+		<main>
+			<div class="container">
+				<h1 class="page-title">Highlights</h1>
+
+				<div class="row gx-4">
+					<div class="col-lg-6 mb-4">
+						<div class="highlight-card mb-4">
+							<span class="panel-title">Popular game</span>
+
+							<!-- Game 1 -->
+							<div class="game-item">
+								<img
+									class="game-thumb"
+									src="./assets/images/popular_games/hades_2.jpeg"
+									alt="Hades 2" />
+								<div class="flex-grow-1">
+									<h6 class="game-title">Hades 2</h6>
+									<span class="game-date">Sep 25, 2025</span>
+									<div class="d-flex flex-wrap justify-content-end">
+										<span class="small-pill pc">PC</span>
+										<span class="small-pill switch">Switch</span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Game 2 -->
+							<div class="game-item">
+								<img
+									class="game-thumb"
+									src="./assets/images/popular_games/split_fiction.jpg"
+									alt="Split Fiction" />
+								<div class="flex-grow-1">
+									<h6 class="game-title">Split Fiction</h6>
+									<span class="game-date">Mar 6, 2025</span>
+									<div class="d-flex flex-wrap justify-content-end">
+										<span class="small-pill pc">PC</span>
+										<span class="small-pill ps5">PS5</span>
+										<span class="small-pill xbox">Xbox</span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Game 3 -->
+							<div class="game-item mb-0">
+								<img
+									class="game-thumb"
+									src="./assets/images/popular_games/blue_prince.jpg"
+									alt="Blue Prince" />
+								<div class="flex-grow-1">
+									<h6 class="game-title">Blue Prince</h6>
+									<span class="game-date">Apr 10, 2025</span>
+									<div class="d-flex flex-wrap justify-content-end">
+										<span class="small-pill pc">PC</span>
+										<span class="small-pill ps5">PS5</span>
+										<span class="small-pill xbox">Xbox</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Platforms small card -->
+						<div class="highlight-card platforms-panel">
+							<span class="panel-title">Platforms</span>
+							<div class="d-flex flex-wrap">
+								<button class="btn btn-platform">💻 PC</button>
+								<button class="btn btn-platform">⭑ PS5</button>
+								<button class="btn btn-platform">⛭ Xbox</button>
+								<button class="btn btn-platform">🔴 Switch</button>
+								<button class="btn btn-platform">🗨️ Discord</button>
+								<button class="btn btn-platform">📺 Twitch</button>
+								<button class="btn btn-platform">🛒 Steam</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right column: Top Rated -->
+					<div class="col-lg-6 mb-4">
+						<div class="highlight-card">
+							<span class="panel-title">Top Rated</span>
+
+							<!-- Top Rated 1 -->
+							<div class="game-item">
+								<img
+									class="game-thumb"
+									src="./assets/images/top_rated_games/zelda.webp"
+									alt="Zelda" />
+								<div class="flex-grow-1">
+									<h6 class="game-title">The Legend of Zelda: Tears of the Kingdom</h6>
+									<span class="game-date">Jun 05, 2025</span>
+									<div class="d-flex flex-wrap justify-content-end">
+										<span class="small-pill switch">Switch</span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Top Rated 2 -->
+							<div class="game-item">
+								<img
+									class="game-thumb"
+									src="./assets/images/top_rated_games/clair_obscur.webp"
+									alt="Clair Obscur" />
+								<div class="flex-grow-1">
+									<h6 class="game-title">Clair Obscur: Expedition 33</h6>
+									<span class="game-date">Apr 24, 2025</span>
+									<div class="d-flex flex-wrap justify-content-end">
+										<span class="small-pill pc">PC</span>
+										<span class="small-pill ps5">PS5</span>
+										<span class="small-pill xbox">Xbox</span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Top Rated 3 -->
+							<div class="game-item mb-0">
+								<img
+									class="game-thumb"
+									src="./assets/images/top_rated_games/hollow_knight.webp"
+									alt="Hollowsong" />
+								<div class="flex-grow-1">
+									<h6 class="game-title">Hollow Knight: Silksong</h6>
+									<span class="game-date">Sep 4, 2025</span>
+									<div class="d-flex flex-wrap justify-content-end">
+										<span class="small-pill pc">PC</span>
+										<span class="small-pill ps5">PS5</span>
+										<span class="small-pill xbox">Xbox</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- FOOTER -->
+
+		<footer>
+			<div class="footer-inner">
+				<div class="footer-col">
+					<h4>About us</h4>
+					<p>Who we are &amp; what we do</p>
+				</div>
+
+				<div class="footer-col">
+					<h4>Support</h4>
+					<ul>
+						<li><a href="#">Help Center</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col social">
+					<h4>Social media icons</h4>
+					<div class="social-icons" aria-label="Social media">
+						<a href="https://www.facebook.com/?locale=en_GB" class="social-btn facebook">
+							<i class="fa-brands fa-facebook-f"></i>
+						</a>
+						<a href="https://x.com/i/flow/login" class="social-btn twitter">
+							<i class="fa-brands fa-twitter"></i>
+						</a>
+						<a href="https://www.instagram.com/" class="social-btn instagram">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">© Gaming Platform. All rights reserved</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

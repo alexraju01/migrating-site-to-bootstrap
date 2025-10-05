@@ -5,106 +5,77 @@ main {
 	margin: 0 auto;
 }
 
-/* Cards container */
-.cards-section {
-	margin-top: 1.6rem;
+/* Panel (Bootstrap used for layout; styling below for final look) */
+.popular-panel {
+	width: 340px; /* match screenshot width */
+	margin: 0 auto;
 }
 
-#cards-heading {
-	font-size: 3rem;
-	text-align: center;
-	margin-bottom: 2rem;
+.popular-card {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
+	border-radius: 12px;
+	padding: 0.85rem;
+	border: 1px solid var(--edge);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
 }
 
-.cards-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(clamp(25rem, 45vw, 40rem), 1fr));
-	gap: 1.25rem;
-	padding: 0 1rem;
-}
-
-/* Individual card */
-.card {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-	border-radius: 1.4rem;
-	padding: 1.1rem;
-	border: 0.12rem solid rgba(255, 255, 255, 0.03);
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-
-	min-height: 30rem;
-}
-.card-title {
-	font-size: 1.8rem;
-	font-weight: 700;
-	color: var(--color-text);
-	text-align: center;
-}
-
-.game-row {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-	padding: 0.8rem;
-	background: rgba(255, 255, 255, 0.02);
-	border-radius: 0.9rem;
-	border: 0.08rem solid rgba(255, 255, 255, 0.03);
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.game-row:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 8px 20px rgba(255, 0, 85, 0.2); /* matches --color-accent */
-}
-
-.thumbnail {
-	width: 72px;
-	aspect-ratio: 2/3;
-	border-radius: 0.9rem;
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-	border: 0.08rem solid rgba(255, 255, 255, 0.03);
-	flex-shrink: 0;
-}
-
-.thumbnail img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.panel-title {
 	display: block;
-	border-radius: inherit;
+	text-align: center;
+	font-family: "Press Start 2P", monospace;
+	font-size: 12px; /* pixel-like title in screenshot */
+	margin-bottom: 0.6rem;
+	color: #f3f3f3;
+	letter-spacing: 0.06em;
 }
 
-.meta {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	gap: 0.4rem;
-	position: relative;
-	width: 100%;
+/* Game rows use bootstrap .d-flex and utilities; add subtle custom styling */
+.game-item {
+	border-radius: 10px;
+	padding: 0.6rem;
+	border: 1px solid var(--item-edge);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.002), rgba(255, 255, 255, 0));
+	margin-bottom: 0.8rem;
+}
+.game-item:last-child {
+	margin-bottom: 0;
+}
+
+.game-thumb {
+	width: 56px;
+	height: 84px;
+	object-fit: cover;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.02);
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+	flex: 0 0 56px;
 }
 
 .game-title {
-	font-size: 1.4rem;
-	font-weight: 700;
-	color: var(--color-text);
+	font-family: "Press Start 2P", monospace;
+	font-size: 13px; /* small pixel-y title */
+	margin: 0 0 0.35rem 0;
+	color: #eaeaea;
+	line-height: 1;
 }
 
-.game-info {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	gap: 0.4rem;
-	font-size: 1.1rem;
-	color: var(--color-soft);
-	height: 100%;
+.game-date {
+	font-size: 12px;
+	color: var(--muted);
+	margin-bottom: 0.5rem;
+	display: block;
 }
 
-/* .release-date strong, */
-.release-date {
-	position: absolute;
-	bottom: 0;
+/* Bootstrap .badge is used, but override to match look */
+
+@media (max-width: 380px) {
+	.popular-panel {
+		width: 100%;
+	}
+	.game-thumb {
+		width: 50px;
+		height: 76px;
+	}
 }
 
 .platforms {
@@ -116,53 +87,6 @@ main {
 }
 
 /* Platform pills */
-
-.small-pill {
-	padding: 0.3rem 0.8rem;
-	border-radius: 0.6rem;
-	font-weight: 600;
-	font-size: 1rem;
-	color: #aaa;
-	background: rgba(255, 255, 255, 0.02);
-	border: 0.08rem solid rgba(255, 255, 255, 0.03);
-	transition: all 0.25s ease;
-	cursor: pointer;
-}
-
-.small-pill:hover {
-	color: #fff;
-	transform: translateY(-1px);
-}
-
-/* Brand colors for hover */
-.small-pill.pc:hover {
-	background: #2d89ef;
-	box-shadow: 0 6px 20px rgba(45, 137, 239, 0.6);
-}
-.small-pill.ps5:hover {
-	background: #003791;
-	box-shadow: 0 6px 20px rgba(0, 55, 145, 0.6);
-}
-.small-pill.xbox:hover {
-	background: #107c10;
-	box-shadow: 0 6px 20px rgba(16, 124, 16, 0.6);
-}
-.small-pill.switch:hover {
-	background: #e60012;
-	box-shadow: 0 6px 20px rgba(230, 0, 18, 0.6);
-}
-.small-pill.discord:hover {
-	background: #5865f2;
-	box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
-}
-.small-pill.twitch:hover {
-	background: #9146ff;
-	box-shadow: 0 6px 20px rgba(145, 70, 255, 0.6);
-}
-.small-pill.steam:hover {
-	background: #1b2838;
-	box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
-}
 
 /* Top rated list */
 .top-list {
@@ -262,41 +186,4 @@ main {
 	color: #fff;
 	box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
 	transform: translateY(-2px);
-}
-
-@media (max-width: 900px) {
-	.small-pill {
-		color: #fff;
-		transform: translateY(-1px);
-	}
-
-	/* Brand colors for hover */
-	.small-pill.pc {
-		background: #2d89ef;
-		box-shadow: 0 6px 20px rgba(45, 137, 239, 0.6);
-	}
-	.small-pill.ps5 {
-		background: #003791;
-		box-shadow: 0 6px 20px rgba(0, 55, 145, 0.6);
-	}
-	.small-pill.xbox {
-		background: #107c10;
-		box-shadow: 0 6px 20px rgba(16, 124, 16, 0.6);
-	}
-	.small-pill.switch {
-		background: #e60012;
-		box-shadow: 0 6px 20px rgba(230, 0, 18, 0.6);
-	}
-	.small-pill.discord {
-		background: #5865f2;
-		box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
-	}
-	.small-pill.twitch {
-		background: #9146ff;
-		box-shadow: 0 6px 20px rgba(145, 70, 255, 0.6);
-	}
-	.small-pill.steam {
-		background: #1b2838;
-		box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
-	}
 }
