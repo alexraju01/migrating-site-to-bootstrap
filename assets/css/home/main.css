@@ -1,189 +1,212 @@
-/* ###### MAIN: Cards grid (wireframe) ###### */
-main {
-	padding: 2rem 1.25rem 3rem;
-	max-width: 130rem;
-	margin: 0 auto;
+/* Cards section */
+.cards-section {
+	padding: 2.5rem 1rem 4rem;
+}
+.card-custom {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	color: var(--color-text);
+}
+.small-pill {
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	background: rgba(255, 255, 255, 0.03);
+	margin-right: 0.25rem;
+}
+.small-pill.pc {
+	border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.game-row {
+	gap: 0.75rem;
+	align-items: center;
+}
+.thumbnail img {
+	width: 64px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 6px;
 }
 
-/* Panel (Bootstrap used for layout; styling below for final look) */
-.popular-panel {
-	width: 340px; /* match screenshot width */
-	margin: 0 auto;
+/* Responsive tweaks */
+@media (min-width: 992px) {
+	#hero h1 {
+		font-size: 3.2rem;
+	}
 }
 
-.popular-card {
+/* Page title */
+.page-title {
+	font-family: "Press Start 2P", monospace;
+	font-size: 34px;
+	text-align: center;
+	color: #f7f7f8;
+	margin-bottom: 1.2rem;
+}
+
+/* Panel (card-like) */
+.highlight-card {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
 	border-radius: 12px;
-	padding: 0.85rem;
+	padding: 1rem;
 	border: 1px solid var(--edge);
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
 .panel-title {
 	display: block;
 	text-align: center;
 	font-family: "Press Start 2P", monospace;
-	font-size: 12px; /* pixel-like title in screenshot */
-	margin-bottom: 0.6rem;
+	font-size: 13px;
+	margin-bottom: 0.9rem;
 	color: #f3f3f3;
 	letter-spacing: 0.06em;
 }
 
-/* Game rows use bootstrap .d-flex and utilities; add subtle custom styling */
+/* Game row */
 .game-item {
-	border-radius: 10px;
-	padding: 0.6rem;
-	border: 1px solid var(--item-edge);
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	padding: 12px;
+	border-radius: 12px;
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0.002), rgba(255, 255, 255, 0));
-	margin-bottom: 0.8rem;
+	border: 1px solid var(--item-edge);
+	margin-bottom: 12px;
 }
 .game-item:last-child {
 	margin-bottom: 0;
 }
 
 .game-thumb {
-	width: 56px;
-	height: 84px;
+	width: 64px;
+	height: 96px;
+	flex: 0 0 64px;
 	object-fit: cover;
 	border-radius: 6px;
 	border: 1px solid rgba(255, 255, 255, 0.02);
-	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
-	flex: 0 0 56px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
 .game-title {
 	font-family: "Press Start 2P", monospace;
-	font-size: 13px; /* small pixel-y title */
-	margin: 0 0 0.35rem 0;
-	color: #eaeaea;
+	font-size: 13px;
+	color: #efefef;
+	margin: 0 0 6px 0;
 	line-height: 1;
 }
 
 .game-date {
 	font-size: 12px;
 	color: var(--muted);
-	margin-bottom: 0.5rem;
 	display: block;
+	margin-bottom: 8px;
 }
 
-/* Bootstrap .badge is used, but override to match look */
-
-@media (max-width: 380px) {
-	.popular-panel {
-		width: 100%;
-	}
-	.game-thumb {
-		width: 50px;
-		height: 76px;
-	}
-}
-
-.platforms {
-	position: absolute;
-	font-weight: 600;
-	color: var(--color-text);
-	right: 0;
-	bottom: 0;
-}
-
-/* Platform pills */
-
-/* Top rated list */
-.top-list {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-}
-
-.top-list li {
-	display: flex;
-	align-items: center;
-	color: var(--color-soft);
-}
-
-.badge {
-	background: rgba(255, 0, 85, 0.12);
-	padding: 0.2rem 0.6rem;
+.small-pill {
+	padding: 4px 8px;
 	border-radius: 0.6rem;
-	font-weight: 700;
-	color: var(--color-text);
-}
-
-/* Platforms */
-.platform-list {
-	display: flex;
-	gap: 0.3rem;
-	flex-wrap: wrap;
-	margin-top: 0.6rem;
-}
-
-.platform-pill {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.8rem 1.4rem;
-	border-radius: 0.8rem;
+	font-weight: 600;
+	font-size: 11px;
+	color: #aaa;
 	background: rgba(255, 255, 255, 0.02);
-	border: 0.08rem solid rgba(255, 255, 255, 0.03);
-	font-weight: 700;
-	font-size: small;
-	color: var(--color-soft);
-	cursor: pointer;
+	border: 1px solid rgba(255, 255, 255, 0.06);
 	transition: all 0.25s ease;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* subtle base shadow */
+	cursor: pointer;
 }
 
-.platform-pill i {
-	font-size: 1rem;
-	color: inherit;
-	transition: color 0.25s ease;
-}
-
-/* This hver effect make the the items larger on hover */
-.platform-pill:hover {
-	scale: 1.1;
-}
-
-/* Hover states with glow */
-.platform-pill.pc:hover {
-	background: #2d89ef; /* desktop for windows blue */
+.small-pill:hover {
 	color: #fff;
+	transform: translateY(-1px);
+}
+
+.small-pill.pc:hover {
+	background: #2d89ef;
 	box-shadow: 0 6px 20px rgba(45, 137, 239, 0.6);
 }
-
-.platform-pill.ps5:hover {
-	background: #003791; /* PS5 drak blue */
-	color: #fff;
+.small-pill.ps5:hover {
+	background: #003791;
 	box-shadow: 0 6px 20px rgba(0, 55, 145, 0.6);
 }
-
-.platform-pill.xbox:hover {
-	background: #107c10; /* Xbox green */
-	color: #fff;
+.small-pill.xbox:hover {
+	background: #107c10;
 	box-shadow: 0 6px 20px rgba(16, 124, 16, 0.6);
 }
-
-.platform-pill.switch:hover {
-	background: #e60012; /* switch red */
-	color: #fff;
+.small-pill.switch:hover {
+	background: #e60012;
 	box-shadow: 0 6px 20px rgba(230, 0, 18, 0.6);
 }
-
-.platform-pill.discord:hover {
-	background: #5865f2; /* Discord blurple */
-	color: #fff;
+.small-pill.discord:hover {
+	background: #5865f2;
 	box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
 }
-
-.platform-pill.twitch:hover {
-	background: #9146ff; /* Twitch purple */
-	color: #fff;
+.small-pill.twitch:hover {
+	background: #9146ff;
 	box-shadow: 0 6px 20px rgba(145, 70, 255, 0.6);
 }
-
-.platform-pill.steam:hover {
-	background: #1b2838; /* Steam dark */
-	color: #fff;
+.small-pill.steam:hover {
+	background: #1b2838;
 	box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
-	transform: translateY(-2px);
+}
+
+/* Brand colors for hover */
+@media (max-width: 900px) {
+	.small-pill {
+		color: #fff;
+		transform: translateY(-1px);
+	}
+	.small-pill.pc {
+		background: #2d89ef;
+		box-shadow: 0 6px 20px rgba(45, 137, 239, 0.6);
+	}
+	.small-pill.ps5 {
+		background: #003791;
+		box-shadow: 0 6px 20px rgba(0, 55, 145, 0.6);
+	}
+	.small-pill.xbox {
+		background: #107c10;
+		box-shadow: 0 6px 20px rgba(16, 124, 16, 0.6);
+	}
+	.small-pill.switch {
+		background: #e60012;
+		box-shadow: 0 6px 20px rgba(230, 0, 18, 0.6);
+	}
+	.small-pill.discord {
+		background: #5865f2;
+		box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
+	}
+	.small-pill.twitch {
+		background: #9146ff;
+		box-shadow: 0 6px 20px rgba(145, 70, 255, 0.6);
+	}
+	.small-pill.steam {
+		background: #1b2838;
+		box-shadow: 0 6px 20px rgba(27, 40, 56, 0.6);
+	}
+}
+/* Platforms panel (smaller badges) */
+.platforms-panel .btn-platform {
+	font-size: 12px;
+	border-radius: 8px;
+	padding: 8px 12px;
+	margin: 6px 6px 6px 0;
+	background: rgba(255, 255, 255, 0.02);
+	color: #d6d6d8;
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	text-align: left;
+}
+
+/* Keep spacing consistent inside columns */
+.mb-16 {
+	margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+	.game-thumb {
+		width: 56px;
+		height: 84px;
+		flex: 0 0 56px;
+	}
 }

@@ -1,12 +1,3 @@
-/*
-|=================================================================================|
-| BOOTSTRAP ADAPTATION OF CUSTOM STYLES                                           |
-| This CSS file should be linked AFTER the main Bootstrap CSS file.               |
-| It uses Bootstrap utility classes in the HTML for layout and spacing,           |
-| but overrides appearance properties (colors, backgrounds, fonts, effects) here. |
-|=================================================================================|
-*/
-
 /* 1. CUSTOM CSS VARIABLES & BOOTSTRAP OVERRIDES */
 :root {
 	/* Custom Theme Colors */
@@ -21,10 +12,10 @@
 
 	--bs-primary: var(--nl-color-accent);
 	--bs-light: var(--nl-glass);
-	--bs-dark: var(--nl-color-bg); /* Using bg for 'dark' background in the team section */
+	--bs-dark: var(--nl-color-bg);
 	--bs-body-color: var(--nl-color-text);
 	--bs-body-bg: var(--nl-color-bg);
-	--bs-secondary: var(--nl-color-soft); /* Using soft color for secondary text/backgrounds */
+	--bs-secondary: var(--nl-color-soft);
 
 	--bs-body-font-family: "Orbitron", sans-serif;
 }
